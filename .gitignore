@@ -1,2 +1,37 @@
- *.exe
+# C++ compiled files
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+*.a
+*.lib
+
+# Temporary files
 tempCodeRunnerFile.cpp
+*.tmp
+*.log
+*.bak
+*.swp
+
+# Build files
+build/
+Build/
+build-*/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Debug files
+*.pdb
+*.ilk
+*.dwo
+
+# Cache and test files
+.cache/
+Testing/
+
