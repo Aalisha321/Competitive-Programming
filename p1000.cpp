@@ -582,6 +582,42 @@ ll minw=w;
     }
     cout << global << endl;
  }
+ void solve22(){
+    ll w,h; cin>>w>>h;
+    ll k; cin>>k;
+    ll x1,x2;
+    cin>>x1;
+    for(ll i=1; i<k-1; i++){
+        ll t; cin>>t;
+    }
+    cin>>x2;
+    cin>>k;
+    ll x12,x22;
+    cin>>x12;
+    for(ll i=1; i<k-1; i++){
+        ll t; cin>>t;
+    }
+    cin>>x22;
+
+    cin>>k;
+    ll y1,y2;
+    cin>>y1;
+    for(ll i=1; i<k-1; i++){
+        ll t; cin>>t;
+    }
+    cin>>y2;
+
+    cin>>k;
+    ll y12,y22;
+    cin>>y12;
+    for(ll i=1; i<k-1; i++){
+        ll t; cin>>t;
+    }
+    cin>>y22;
+    ll x = max((x2-x1) , (x22-x12));
+    ll y= max((y2-y1), (y22-y12));
+    cout << max (x*h , y*w) << endl;
+ }
   
  
  int main(){
@@ -589,7 +625,7 @@ ll minw=w;
     T=1;
      cin>>T;
     while(T--){
-        solve21();
+        solve22();
     }
     return 0;
  }
