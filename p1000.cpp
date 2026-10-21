@@ -582,7 +582,7 @@ ll minw=w;
     }
     cout << global << endl;
  }
- void solve22(){
+ void solve18(){
     ll w,h; cin>>w>>h;
     ll k; cin>>k;
     ll x1,x2;
@@ -618,6 +618,29 @@ ll minw=w;
     ll y= max((y2-y1), (y22-y12));
     cout << max (x*h , y*w) << endl;
  }
+
+ void solve19(){
+     ll n; cin>>n;
+     vll a(n); for(ll i=0; i<n; i++) cin>>a[i];
+     vector<pair<ll,ll>> b;
+     for(ll i=0; i<n; i++) b.pb({a[i],i});
+      sort(b.rbegin(), b.rend());
+
+      vll ans(n+1,0);
+
+      ans[0]=0;
+      ll m=0;
+      ll cor=1;
+      for(ll i=0; i<n; i++){
+        ans[b[i].second+1] = cor;
+        m += (2* abs(cor)*b[i].first);
+         if(cor <0) cor = abs(cor)+1;
+         else cor = -cor;
+      }
+      cout << m << endl;
+      for(ll i=0; i<=n; i++) cout << ans[i] << " ";
+      cout << endl;
+ }
   
  
  int main(){
@@ -625,7 +648,7 @@ ll minw=w;
     T=1;
      cin>>T;
     while(T--){
-        solve22();
+        solve19();
     }
     return 0;
  }

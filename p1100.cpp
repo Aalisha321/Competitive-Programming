@@ -34,12 +34,36 @@ void solve1(){
     cout << ans << endl;
 }
 
+void solve2(){
+   ll n,k; cin>>n>>k;
+   vll a(n),b(n);
+   for(ll i=0; i<n; i++) cin>>a[i];
+   for(ll i=0; i<n; i++) cin>>b[i];
+
+   vll p(n);
+   p[0]=a[0];
+   for(ll i=1; i<n; i++) p[i] = p[i-1]+a[i];
+   
+   vll mb(n);
+   mb[0] = b[0];
+   for(ll i=1; i<n; i++) mb[i] = max(mb[i-1],b[i]);
+
+   ll ans=0;
+   for(ll i=0; i<n; i++){
+    if(k>= i+1)  ans = max (ans, p[i]+ (k-i-1)*mb[i]);
+   }
+   cout << ans << endl;
+}
+void solve3(){
+   
+}
+
  int main(){
     ll T;
     T=1;
      cin>>T;
     while(T--){
-        solve1();
+        solve2();
     }
     return 0;
  }
