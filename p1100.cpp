@@ -55,7 +55,34 @@ void solve2(){
    cout << ans << endl;
 }
 void solve3(){
-   
+   ll n; cin>>n;
+   vector<pll> v;
+   for(ll i=0; i<n; i++){
+      ll x;
+      cin>>x;
+      v.pb({x,i});
+   }
+   sort(all(v)); 
+   vll p(n);
+   p[0] = v[0].first;
+   for(ll i=1; i<n; i++) p[i] = p[i-1]+v[i].first;
+   vll ans(n);
+   ans[n-1] = n-1;
+   for(ll i=n-2; i>=0; i--){
+      if(p[i] >= v[i+1].first){
+         ans[i]=ans[i+1];
+      } else {
+         ans[i]=i;
+      }
+   }
+   vll res(n);
+   for(ll i=0; i<n; i++){
+      res[v[i].second] = ans[i];
+   }
+
+   for(ll i=0; i<n; i++) cout << res[i] << " ";
+   cout << endl;
+  
 }
 
  int main(){
@@ -63,7 +90,7 @@ void solve3(){
     T=1;
      cin>>T;
     while(T--){
-        solve2();
+        solve3();
     }
     return 0;
  }
