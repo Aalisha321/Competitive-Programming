@@ -644,6 +644,7 @@ ll minw=w;
   
  
  int main(){
+    fast;
     ll T;
     T=1;
      cin>>T;

@@ -1,7 +1,21 @@
-     #include<bits/stdc++.h>
+ #include<bits/stdc++.h>
  using namespace std;
+
  typedef long long ll;
  #define pb push_back
+ #define fast                     \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);
+#define vi vector<int>
+#define vll vector<ll>
+#define vdd vector<dd>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+
+const ll MOD = 1e9 + 7;
+ 
 
  void solve1(){
    ll a,b; cin>>a>>b;
@@ -721,7 +735,8 @@ void solve31(){
    // else cout << "-1\n";
 }
 
- int main(){ 
+ int main(){
+   fast;
     ll T;
     T=1; 
     cin>>T;

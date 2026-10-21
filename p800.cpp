@@ -396,6 +396,7 @@ cout<< ans << endl;
  
 
  int main(){
+   fast;
     int T;
     T=1;
    cin>>T;

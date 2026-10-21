@@ -86,6 +86,7 @@ void solve3(){
 }
 
  int main(){
+   fast;
     ll T;
     T=1;
      cin>>T;
