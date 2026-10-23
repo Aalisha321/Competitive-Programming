@@ -367,6 +367,31 @@ cout<< ans << endl;
    } cout << endl;
  }
 
+ void solve22(){
+   ll n,k; cin>>n>>k;
+   if(n%2 == 0) cout << "YES\n";
+   else {
+      if(k%2 == 0) cout << "NO\n";
+      else cout << "YES\n";
+   }
+ }
+
+ void solve23(){
+   ll a,b,c,d;
+   cin>>a>>b>>c>>d;
+   if(d < b ) {
+      cout << "-1\n";
+      return;
+   }
+    if((d-b) >=0 ){
+    if(c > a+d-b) {
+      cout << "-1\n";
+      return;
+    }
+    else cout << (d-b)+a+d-b-c << endl;
+   }
+ }
+
  void solve31(){
    ll n,a,b; cin>> n>>a>>b;
    if((a+b+2 <= n) || (a==n && b==n)) {
@@ -390,10 +415,6 @@ cout<< ans << endl;
    cout << ans << endl;
  }
 
- 
-
- 
- 
 
  int main(){
    fast;
@@ -401,7 +422,7 @@ cout<< ans << endl;
     T=1;
    cin>>T;
     while(T--){
-     solve30();
+     solve23();
     }
     return 0;
  }
