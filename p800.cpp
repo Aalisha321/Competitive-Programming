@@ -114,16 +114,8 @@ const ll MOD = 1e9 + 7;
    cout<< -1 << endl;
  }
 
- void solve8(){
-   ll n, k; cin>> n>> k;
-   map<ll,ll>a;
-   for(ll i=0;i<n;i++) {
-      ll x;
-      cin>> a[x,i];
-   }
- }
 
- void solve9(){
+ void solve8(){
    ll n,k; cin>> n>> k;
    vector<ll>a(n);  for(ll i=0;i<n;i++) cin>> a[i];
    for(ll i=0;i<n;i++){
@@ -135,7 +127,7 @@ const ll MOD = 1e9 + 7;
    cout<< "NO\n";
  }
 
- void solve10(){
+ void solve9(){
    ll n; cin>>n;  ll sum=0;
    for(ll i=0;i<n-1;i++){
      ll x; cin>> x;
@@ -144,7 +136,7 @@ const ll MOD = 1e9 + 7;
    cout<< (-1)*sum << endl;
  }
 
- void solve11(){
+ void solve10(){
    string s[10]; for(ll i=0;i<10;i++) cin>>s[i];
    ll point=0;
    for(ll i=0;i<10;i++){
@@ -159,7 +151,7 @@ const ll MOD = 1e9 + 7;
    cout<< point << endl;
  }
 
- void solve11m2(){
+ void solve10m2(){
    int score[10][10] = {
 	{1,1,1,1,1,1,1,1,1,1},
 	{1,2,2,2,2,2,2,2,2,1},
@@ -185,7 +177,7 @@ cout<< ans << endl;
 
  }
 
- void solve12(){
+ void solve11(){
    ll n; cin>> n;
    vector<ll>a(n); 
    for(ll i=0;i<n;i++){
@@ -198,7 +190,7 @@ cout<< ans << endl;
    cout<< find<< endl;
  }
 
- void solve13(){
+ void solve12(){
    ll n; cin>>n;
    vector<ll>b(n),a; for(ll i=0;i<n;i++) cin>>b[i];
    a.pb(b[0]);
@@ -217,7 +209,7 @@ cout<< ans << endl;
    cout<< endl;
  }
 
- void solve14(){
+ void solve13(){
    ll n; cin>>n; vector<ll>a(n);
    ll max_el = INT_MIN;
    for(ll i=0;i<n;i++){
@@ -244,7 +236,7 @@ cout<< ans << endl;
    }
  }
 
- void solve15(){
+ void solve14(){
    ll a,b,c; cin>> a>>b>>c;
     ll k = (c/2);
     ll an  = (c-k)+a;
@@ -254,7 +246,7 @@ cout<< ans << endl;
     else if (k == an) cout<< "Second\n";
  }
 
- void solve16(){
+ void solve15(){
   ll n; cin>>n; 
   if(n==1){
    cout<< "NO\n";
@@ -268,7 +260,7 @@ cout<< ans << endl;
   else cout<< "NO\n";
  }
 
- void solve17b(){
+ void solve16(){
    ll n; cin>>n;
    vector<ll>a(n); for(ll i=0;i<n;i++)cin>>a[i];
    vector<ll>b=a;
@@ -392,16 +384,22 @@ cout<< ans << endl;
    }
  }
 
- void solve31(){
-   ll n,a,b; cin>> n>>a>>b;
-   if((a+b+2 <= n) || (a==n && b==n)) {
-      cout << "yes\n";
-   } else{
-      cout <<"No\n";
+ void solve24(){
+   ll n; cin>>n;
+   ll t=0;
+   for(ll i=0; i<n; i++){
+       ll x; cin>>x;
+       t = (t^x);
    }
+   if(n%2 == 0){
+      if(t==0) cout << "0\n";
+      else cout << "-1\n";
+      return;
+   }
+   cout << t << endl;
  }
 
- void solve30(){
+  void solve30(){
    string s;
    cin>>s;
    ll n= s.size();
@@ -416,13 +414,24 @@ cout<< ans << endl;
  }
 
 
+ void solve31(){
+   ll n,a,b; cin>> n>>a>>b;
+   if((a+b+2 <= n) || (a==n && b==n)) {
+      cout << "yes\n";
+   } else{
+      cout <<"No\n";
+   }
+ }
+
+
+
  int main(){
    fast;
     int T;
     T=1;
    cin>>T;
     while(T--){
-     solve23();
+     solve24();
     }
     return 0;
  }
