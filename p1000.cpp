@@ -3,6 +3,7 @@
 
  typedef long long ll;
  #define pb push_back
+   #define eb emplace_back
  #define fast                     \
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
@@ -568,7 +569,7 @@ ll minw=w;
 
  }
 
- void solve21(){
+ void solve24(){
     ll n; cin>>n;
     vll a(n); 
     for(ll i=0; i<n; i++) cin>>a[i];
@@ -641,6 +642,45 @@ ll minw=w;
       for(ll i=0; i<=n; i++) cout << ans[i] << " ";
       cout << endl;
  }
+
+ void solve20(){
+    ll a,b; cin>>a>>b;
+    ll x=0;
+        if(a==1 && b==1){
+        cout << 3 << endl;
+        return;
+    }
+  //  for(ll i=1; i<a ; i++) x = x^i;
+
+    ll rem = (a-1)%4;
+    if(rem == 0) x = a-1;
+    else if (rem==1) x = 1;
+    else if(rem == 2) x = a;
+    else x=0;
+
+    if(x==b) {
+        cout << a << endl;
+    } else {
+       if((x^b) != a) cout << a+1 << endl;
+       else cout << a+2 << endl;
+    }
+ }
+
+ void solve21(){  //here
+    string a,b; cin>>a>>b;
+   ll global=0;
+   ll n=a.size() , m=b.size();
+   for(ll i=0; i<n; i++){
+    for(ll j=0; j<m; j++){
+        ll curr=0;
+        while(i+curr <n && j+curr<m && a[i+curr]==b[j+curr]){
+            curr++;
+        }
+        global = max(global,curr);
+    }
+   }
+   cout << (n+m- 2*global) << endl;
+ }
   
  
  int main(){
@@ -649,7 +689,7 @@ ll minw=w;
     T=1;
      cin>>T;
     while(T--){
-        solve19();
+        solve21();
     }
     return 0;
  }
