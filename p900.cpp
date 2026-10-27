@@ -3,6 +3,7 @@
 
  typedef long long ll;
  #define pb push_back
+   #define eb emplace_back
  #define fast                     \
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
