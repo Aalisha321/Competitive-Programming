@@ -400,6 +400,47 @@ cout<< ans << endl;
    cout << t << endl;
  }
 
+ void solve25(){
+   ll n; cin>>n; string s; cin>>s;
+   if(n==0 || n==1){
+      cout << n << endl;
+      return;
+   }
+   ll ans=0;
+   ll i=0, j=n-1;
+   while(i<j){
+      if(s[i] != s[j]){
+         ans++;
+      } else break;
+      i++;
+      j--;
+   }
+   cout << n - 2*ans << endl;
+ }
+
+ void solve26(){
+   ll n; cin>>n; vll a(n); 
+   for(ll i=0; i<n; i++) {
+      cin>>a[i];
+   }
+   if(n < 2) {
+      cout << "NO\n";
+      return;
+   }
+   bool poss = false;
+   for(ll i=0; i<n-1; i++){
+      for(ll j=i+1; j<n; j++){
+        if(__gcd(a[i], a[j]) <= 2) {
+         poss = true;
+         break;
+        }
+      }
+   }
+   if(poss) cout << "YES\n";
+   else cout << "NO\n";
+   
+ }
+
   void solve30(){
    string s;
    cin>>s;
@@ -432,7 +473,7 @@ cout<< ans << endl;
     T=1;
    cin>>T;
     while(T--){
-     solve24();
+     solve26();
     }
     return 0;
  }
