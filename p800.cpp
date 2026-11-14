@@ -441,6 +441,33 @@ cout<< ans << endl;
    
  }
 
+ void solve27(){
+   ll n; cin>>n;
+   vll a(n);
+   cin>>a[0];
+   ll j;
+   bool poss = false;
+   for(ll i=1; i<n; i++){
+      cin>> a[i];
+   }
+
+   for(ll i=0; i<n; i++){
+      if( a[i]!= a[0]){
+          poss = true;
+          j =i;
+      }
+   }
+   sort(all(a), greater<ll>());
+   if(poss) {
+      cout << "YES\n";
+      if(a[0] == a[1]) swap (a[1] , a[n-1]);
+      for(ll i=0; i<n; i++) cout << a[i] << " ";
+      cout << endl;
+   }
+   else cout << "NO\n";
+   
+ }
+
   void solve30(){
    string s;
    cin>>s;
@@ -473,7 +500,7 @@ cout<< ans << endl;
     T=1;
    cin>>T;
     while(T--){
-     solve26();
+     solve27();
     }
     return 0;
  }

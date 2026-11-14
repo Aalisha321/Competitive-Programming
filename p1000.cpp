@@ -682,6 +682,22 @@ ll minw=w;
    cout << (n+m- 2*global) << endl;
  }
   
+ void solve22(){ 
+    ll a,b; cin>>a>>b;
+    ll ans = 1e18;
+    for(ll i=0; i<32; i++){
+        ll op = i;
+        ll new_b = b+i;
+        if(new_b == 1) continue;
+        ll new_a = a;
+        while(new_a > 0){
+            new_a/= new_b;
+            op++;
+        }
+        ans = min(ans , op);
+    }
+    cout << ans << endl;
+ }
  
  int main(){
     fast;
@@ -689,7 +705,7 @@ ll minw=w;
     T=1;
      cin>>T;
     while(T--){
-        solve21();
+        solve22();
     }
     return 0;
  }
